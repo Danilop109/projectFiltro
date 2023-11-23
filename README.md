@@ -103,7 +103,8 @@ Este proyecto proporciona una API la cual podrás utilizar para la administracio
             return employes;
         }`
     
-    **Explicacion**: `Inicamos con nuetsra entidad prinncipal y conectamos con clientes filtrando aquellos que no tienen el Id en esta misma entidad y despyes retornamos sus datos. `
+    **Explicacion**: `Inicamos con nuetsra entidad prinncipal y conectamos con clientes filtrando aquellos que no tienen el Id en esta misma entidad y despyes retornamos sus datos.
+    `
 
 
 ## Agradecimientos
