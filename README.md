@@ -79,7 +79,7 @@ Este proyecto proporciona una API la cual podrás utilizar para la administracio
             return officesFru;
         }`
     
-    **Explicacion**: `En esta iniciamos con nuestra entidad`
+    **Explicacion**: `En esta iniciamos con nuestra entidad principal la cual buscaremos los representates de venta que estan conectados con los empleados y a su vez aquellos clientes que no estan con alguna orden y en detalle orden buscamos y filtramos alaquellos que hicieron compra de la gama frutales.`
     
 
 ## 9.  Devuelve un listado con los datos de los empleados que no tienen clientes asociados y el nombre de su jefe asociado:
@@ -103,7 +103,7 @@ Este proyecto proporciona una API la cual podrás utilizar para la administracio
             return employes;
         }`
     
-    **Explicacion**: `En`
+    **Explicacion**: `Inicamos con nuetsra entidad prinncipal y conectamos con clientes filtrando aquellos que no tienen el Id en esta misma entidad y despyes retornamos sus datos. `
 
 
 ## Agradecimientos
