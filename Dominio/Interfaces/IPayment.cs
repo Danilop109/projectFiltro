@@ -8,6 +8,6 @@ namespace Dominio.Interfaces
 {
     public interface IPayment : IGenericRepository2<Payment>
     {
-        
+        Task<IEnumerable<object>> infoSalesRepreAndCustomer();
     }
 }

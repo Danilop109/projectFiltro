@@ -28,5 +28,23 @@ namespace Aplicacion.Repository
             return await _context.Employees
             .FirstOrDefaultAsync(p => p.Id.Equals(id));
         }
+
+        // 9.  Devuelve un listado con los datos de los empleados que no tienen clientes asociados y el nombre de su jefe asociado:
+        public async Task<IEnumerable<object>> GetNoCustEmployAndBoss()
+        {
+            var employes = await (
+                from emp in _context.Employees
+                join supervisor in _context.Employees on emp.IdSupervisorCodeFk equals supervisor.Id
+                where !_context.Customers.Any(customer => customer.IdSalesRepEmployeeCodeFk == emp.Id)
+                select new
+                {
+                    EmployeeName = emp.FirstName,
+                    EmployeeLastName = emp.LastName1,
+                    BossName = supervisor.FirstName
+                }
+            ).ToListAsync();
+
+            return employes;
+        }
     }
 }

@@ -43,6 +43,18 @@ namespace Api.Controllers;
         return this.mapper.Map<PaymentDto>(entidad);
     }
 
+    //Consulta 2
+    [HttpGet("infoSalesRepreAndCustomer")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<object>> infoSalesRepreAndCustomer()
+    {
+        var entidad = await unitofwork.Payments.infoSalesRepreAndCustomer();
+        var dto = mapper.Map<IEnumerable<object>>(entidad);
+        return Ok(dto);
+    }
+
+
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]

@@ -8,6 +8,6 @@ namespace Dominio.Interfaces
 {
     public interface IOffice : IGenericRepository2<Office>
     {
-        
+        Task<IEnumerable<Office>> GetOfficeAnyALotOfThings();
     }
 }

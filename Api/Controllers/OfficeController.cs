@@ -42,6 +42,19 @@ namespace Api.Controllers;
         return this.mapper.Map<OfficeDto>(entidad);
     }
 
+    
+    //Consulta 3
+    [HttpGet("GetOfficeAnyALotOfThings")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<object>> GetOfficeAnyALotOfThings()
+    {
+        var entidad = await unitofwork.Offices.GetOfficeAnyALotOfThings();
+        var dto = mapper.Map<IEnumerable<object>>(entidad);
+        return Ok(dto);
+    }
+
+
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]

@@ -8,6 +8,6 @@ namespace Dominio.Interfaces
 {
     public interface IEmployee : IGenericRepository<Employee>
     {
-        
+        Task<IEnumerable<object>> GetNoCustEmployAndBoss();
     }
 }

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers;
 
-    public class OrderController : BaseApiController
+public class OrderController : BaseApiController
 {
     private readonly IUnitOfWork unitofwork;
     private readonly IMapper mapper;
@@ -42,6 +42,18 @@ namespace Api.Controllers;
         }
         return this.mapper.Map<OrderDto>(entidad);
     }
+
+    //Consulta 1
+    [HttpGet("InfoCustomer")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<object>> InfoCustomer()
+    {
+        var entidad = await unitofwork.Orders.InfoCustomer();
+        var dto = mapper.Map<IEnumerable<object>>(entidad);
+        return Ok(dto);
+    }
+
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]

@@ -43,6 +43,17 @@ namespace Api.Controllers;
         return this.mapper.Map<EmployeeDto>(entidad);
     }
 
+    //Consulta 9
+    [HttpGet("GetNoCustEmployAndBoss")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<object>> GetNoCustEmployAndBoss()
+    {
+        var entidad = await unitofwork.Employees.GetNoCustEmployAndBoss();
+        var dto = mapper.Map<IEnumerable<object>>(entidad);
+        return Ok(dto);
+    }
+
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]

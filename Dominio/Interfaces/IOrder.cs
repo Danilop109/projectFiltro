@@ -8,6 +8,6 @@ namespace Dominio.Interfaces
 {
     public interface IOrder : IGenericRepository<Order>
     {
-        
+        Task<IEnumerable<object>> InfoCustomer();
     }
 }
