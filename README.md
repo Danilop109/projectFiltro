@@ -6,21 +6,6 @@ Este proyecto proporciona una API la cual podrás utilizar para la administracio
 
 ## Endpoints Especificos ⌨️
 
-❗ Recordar que en cada consulta encontramos dos versiones. La `1.0`, la cual responde correctamente la informacion requerida y la `1.1`, la cual nos responde con la informacion pero en esta ocasion implementando la paginación.
-
-🕹 Para consultar la versión 1.0 de todos se ingresa únicamente el Endpoint; para consultar la versión 1.1 se deben seguir los siguientes pasos: 
-
-En el Thunder Client se va al apartado de "Headers" y se escribes lo siguiente: `X-Version` con la version 1.1.
-
-![image](https://github.com/Danilop109/Backend-Vet/assets/124645738/c42e2861-0386-422a-8146-9093c97319f7)
-
-Para modificar la paginación vas al apartado de "Query" y se ingresa lo siguiente:
-
-![image](https://github.com/SilviaJaimes/Proyecto-Veterinaria/assets/132016483/22683e46-037e-4f30-96b8-161df8622b40)
-
- ⚠️ - Recuerda tener un token e implementarlo en Auth.
- ![image](https://github.com/Danilop109/Backend-Vet/assets/124645738/43cb1ba6-9cf1-4999-a596-45ba5bd811dc)
-
 ## 1. Devuelve un listado con el código de pedido, codigo de cliente, fecha esperada, y fecha de entrega de los pedidos que no han sido entregados a tiempo.
 
     **Endpoint**: `http://localhost:5093/api/Order/InfoCustomer`
